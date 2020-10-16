@@ -16,3 +16,7 @@ def login(request):
 
 def about(request):
     return render(request, 'GRE_Website/about.html', {'title': 'About'})
+
+
+def form(request):
+    return render(request, 'GRE_Website/form.html', {'title': 'Forms'})

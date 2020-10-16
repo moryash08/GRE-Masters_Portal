@@ -35,67 +35,69 @@
                         <div class="navbar-nav mr-auto">
                         <a class="nav-item nav-link" href="{% url 'GRE_Website-home' %}">Home</a>
                         <a class="nav-item nav-link" href="{% url 'GRE_Website-about' %}">About</a>
+                        <a class="nav-item nav-link" href="{% url 'GRE_Website-form' %}">Find University</a>
                     </div>
                     <!-- Navbar Right Side -->
                     <div class="navbar-nav">
-                        <a class="nav-item nav-link" href="#">Login</a>
+                        <a class="nav-item nav-link" href="{% url 'GRE_Website-login' %}">Login</a>
                         <a class="nav-item nav-link" href="{% url 'GRE_Website-register' %}">Register</a>
                     </div>
                 </div>
             </div>
         </nav>
     </header>
-
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-8">
-                {% block content %}{% endblock content %}
+    <div class="flex-wrapper">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8">
+                    {% block content %}{% endblock content %}
+                </div>
             </div>
         </div>
-    </div>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-4 offset-1 col-sm-2">
-                    <h5>Links</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="./aboutus.html">About</a></li>
-                        <li><a href="#">Menu</a></li>
-                        <li><a href="./contactus.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="col-7 col-sm-5">
-                    <h5>Our Address</h5>
-                    <address>
-		              121, Clear Water Bay Road<br>
-		              Clear Water Bay, Kowloon<br>
-		              MAHARASHTRA, INDIA<br>
-                      <div class="mb-2"></div>
-		              <i class="fa fa-phone"></i> +91 1234 5678<br>
-                      <i class="fa fa-fax"></i> : +91 8765 4321<br>
-                      <i class="fa fa-envelope"></i> : <a href="mailto:rhythm.munot@spit.ac.in">rhythm.munot@spit.ac.in</a>
-		            </address>
-                </div>
-                <div class="col-12 col-sm-4 align-self-center">
-                    <div class="text-center">
-                        <a class="btn btn-social-icon btn-google btn-sm" href="http://google.com/+"><i class="fab fa-google-plus"></i></a>&nbsp;
-                        <a class="btn btn-social-icon btn-facebook btn-sm" href="http://www.facebook.com/profile.php?id="><i class="fab fa-facebook"></i></a>&nbsp;
-                        <a class="btn btn-social-icon btn-linkedin btn-sm" href="http://www.linkedin.com/in/"><i class="fab fa-linkedin"></i></a>&nbsp;
-                        <a class="btn btn-social-icon btn-twitter btn-sm" href="http://twitter.com/"><i class="fab fa-twitter"></i></a>&nbsp;
-<!--                        <a class="btn btn-social-icon btn-youtube btn-sm" href="http://youtube.com/"><i class="fa fa-youtube"></i></a>&nbsp;-->
-                        <a class="btn btn-social-icon btn-sm" href="mailto:"><i class="fa fa-envelope-o"></i></a>
+        <footer class="footer align-items-end">
+            <div class="container">
+                <div class="row">
+                    <div class="col-4 offset-1 col-sm-2">
+                        <h5>Links</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="{% url 'GRE_Website-home' %}">Home</a></li>
+                            <li><a href="{% url 'GRE_Website-about' %}">About</a></li>
+    <!--                        <li><a href="#">__</a></li>-->
+    <!--                        <li><a href="">__</a></li>-->
+                        </ul>
                     </div>
-                </div>
-           </div>
-           <div class="row">
-                <div class="col">
-                    <p style="text-align: center;">© Copyright 2020 GRE & Masters</p>
-                </div>
-           </div>
-        </div>
-    </footer>
+                    <div class="col-7 col-sm-5">
+                        <h5>Our Address</h5>
+                        <address>
+                          121, Clear Water Bay Road<br>
+                          Clear Water Bay, Kowloon<br>
+                          MAHARASHTRA, INDIA<br>
+                          <div class="mb-2"></div>
+                          <i class="fa fa-phone"></i> : +91 1234 5678<br>
+                          <i class="fa fa-fax"></i> : +91 8765 4321<br>
+                          <i class="fa fa-envelope"></i> : <a href="mailto:rhythm.munot@spit.ac.in">rhythm.munot@spit.ac.in</a>
+                        </address>
+                    </div>
+                    <div class="col-12 col-sm-4 align-self-center">
+                        <div class="text-center">
+                            <a class="btn btn-social-icon btn-google btn-sm" href="http://google.com/+"><i class="fab fa-google-plus"></i></a>&nbsp;
+                            <a class="btn btn-social-icon btn-facebook btn-sm" href="http://www.facebook.com/profile.php?id="><i class="fab fa-facebook"></i></a>&nbsp;
+                            <a class="btn btn-social-icon btn-linkedin btn-sm" href="http://www.linkedin.com/in/"><i class="fab fa-linkedin"></i></a>&nbsp;
+                            <a class="btn btn-social-icon btn-twitter btn-sm" href="http://twitter.com/"><i class="fab fa-twitter"></i></a>&nbsp;
+    <!--                        <a class="btn btn-social-icon btn-youtube btn-sm" href="http://youtube.com/"><i class="fa fa-youtube"></i></a>&nbsp;-->
+                            <a class="btn btn-social-icon btn-sm" href="mailto:"><i class="fa fa-envelope-o"></i></a>
+                        </div>
+                    </div>
+               </div>
+               <div class="row">
+                    <div class="col">
+                        <p style="text-align: center;">© Copyright 2020 GRE & Masters</p>
+                    </div>
+               </div>
+            </div>
+        </footer>
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

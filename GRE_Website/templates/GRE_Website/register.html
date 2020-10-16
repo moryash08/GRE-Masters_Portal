@@ -1,26 +1,19 @@
 {% extends 'GRE_Website/base.html' %}
 
-{% block title %}
-    Register
-{% endblock %}
 {% load static %}
 
 {% block head %}
-        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <link rel="stylesheet" href="{% static 'GRE_Website/register.css' %}">
+    <link rel="stylesheet" href="{% static 'GRE_Website/register.css' %}">
 {% endblock head %}
-{% block content %}
 
+{% block content %}
     <div class="container container-register">
-        <br>
-        <p class="text-center">More bootstrap 4 components on <a href="http://bootstrap-ecommerce.com/"> Bootstrap-ecommerce.com</a></p>
-        <hr>
-        <div class="card bg-light">
+        <div class="card register-card">
+            <div class="card-header">
+                <h4 class="text-center">Create Account</h4>
+            </div>
             <article class="card-body mx-auto" style="max-width: 400px;">
-                <h4 class="card-title mt-3 text-center">Create Account</h4>
-                <p class="text-center">Get started with your free account</p>
+                <p class="text-center">Get started with your free account today!</p>
                 <p>
                     <a href="" class="btn btn-block btn-google"> <i class="fab fa-google"></i>   Login via Google</a>
                     <a href="" class="btn btn-block btn-twitter"> <i class="fab fa-twitter"></i>   Login via Twitter</a>
@@ -30,7 +23,7 @@
                     <span class="bg-light">OR</span>
                 </p>
 
-                <form>
+                <form class="register-form">
                     <div class="form-group input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"> <i class="fa fa-user"></i> </span>
@@ -81,30 +74,18 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
                         </div>
-                        <input class="form-control" placeholder="Repeat password" type="password">
+                        <input class="form-control" placeholder="Confirm password" type="password">
                     </div>
                     <!-- form-group// -->
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary btn-block"> Create Account  </button>
                     </div>
                     <!-- form-group// -->
-                    <p class="text-center">Already Have an account? <a href="{% url 'GRE_Website-login' %}">Log In</a> </p>
+                    <p class="text-center">Already Have an account? <a style="color: darkblue;" href="{% url 'GRE_Website-login' %}">Log In</a> </p>
                     <!-- card.// -->
                 </form>
             </article>
         </div>
         <!-- card.// -->
     </div>
-
-    <br><br>
-    <article class="bg-secondary mb-3">
-        <div class="card-body text-center">
-            <h3 class="text-white mt-3">Bootstrap 4 UI KIT</h3>
-            <p class="h5 text-white">Components and templates  <br> for Ecommerce, marketplace, booking websites
-            and product landing pages</p><br>
-            <p><a class="btn btn-warning" target="_blank" href="http://bootstrap-ecommerce.com/"> Bootstrap-ecommerce.com
-             <i class="fa fa-window-restore "></i></a></p>
-        </div>
-    <br><br>
-    </article>
 {% endblock %}
