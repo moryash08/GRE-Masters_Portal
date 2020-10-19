@@ -1,4 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .forms import UniversityForm
+from django.contrib import messages
 
 
 # Create your views here.
@@ -6,17 +8,18 @@ def home(request):
     return render(request, 'GRE_Website/home.html', {'title': 'Home'})
 
 
-def register(request):
-    return render(request, 'GRE_Website/register.html', {'title': 'Registration'})
-
-
-def login(request):
-    return render(request, 'GRE_Website/login.html', {'title': 'Login'})
-
-
 def about(request):
     return render(request, 'GRE_Website/about.html', {'title': 'About'})
 
 
-def form(request):
-    return render(request, 'GRE_Website/form.html', {'title': 'Forms'})
+def universityform(request):
+    if request.method == 'POST':
+        form = UniversityForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, f'Form Filled Successfully')
+            return redirect('GRE_Website-home')
+
+    else:
+        form = UniversityForm()
+    return render(request, 'GRE_Website/universityform.html', {'title': 'University Form', 'form': form})

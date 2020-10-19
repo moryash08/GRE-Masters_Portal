@@ -35,12 +35,12 @@
                         <div class="navbar-nav mr-auto">
                         <a class="nav-item nav-link" href="{% url 'GRE_Website-home' %}">Home</a>
                         <a class="nav-item nav-link" href="{% url 'GRE_Website-about' %}">About</a>
-                        <a class="nav-item nav-link" href="{% url 'GRE_Website-form' %}">Find University</a>
+                        <a class="nav-item nav-link" href="{% url 'GRE_Website-universityform' %}">Find University</a>
                     </div>
                     <!-- Navbar Right Side -->
                     <div class="navbar-nav">
-                        <a class="nav-item nav-link" href="{% url 'GRE_Website-login' %}">Login</a>
-                        <a class="nav-item nav-link" href="{% url 'GRE_Website-register' %}">Register</a>
+                        <a class="nav-item nav-link" href="{% url 'users-login' %}">Login</a>
+                        <a class="nav-item nav-link" href="{% url 'users-register' %}">Register</a>
                     </div>
                 </div>
             </div>
@@ -50,6 +50,14 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 col-md-8">
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-{{ message.tags }}">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+
                     {% block content %}{% endblock content %}
                 </div>
             </div>

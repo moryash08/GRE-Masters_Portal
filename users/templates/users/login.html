@@ -4,7 +4,7 @@
 
 {% block head %}
 
-    <link rel="stylesheet" href="{% static 'GRE_Website/login.css' %}">
+    <link rel="stylesheet" href="{% static 'users/login.css' %}">
 {% endblock head %}
 
 {% block content %}
@@ -16,7 +16,8 @@
             <article class="card-body mx-auto" style="max-width: 400px;">
                 <p class="text-center">Login and continue with your free account</p>
 
-                <form class="login-form">
+                <form class="login-form" method="post">
+                    {% csrf_token %}
                     <!-- form-group// -->
                     <div class="form-group input-group">
                         <div class="input-group-prepend">
@@ -35,7 +36,7 @@
                         <button type="submit" class="btn btn-primary btn-block"> Login </button>
                     </div>
                     <!-- form-group// -->
-                    <p class="text-center">Don't Have an account? <a style="color: darkblue;" href="{% url 'GRE_Website-register' %}">Register Here</a> </p>
+                    <p class="text-center text-muted">Don't Have an account? <a style="color: darkblue;" href="{% url 'users-register' %}">Register Here</a> </p>
                 </form>
             </article>
         </div>
