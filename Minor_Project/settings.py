@@ -33,7 +33,9 @@ INSTALLED_APPS = [
     'GRE_Website.apps.GreWebsiteConfig',
     'users.apps.UsersConfig',
     'formtags',
+    'django_countries',
     'crispy_forms',
+    'floppyforms',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -123,3 +125,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+LOGIN_REDIRECT_URL = 'GRE_Website-home'
+
+LOGIN_URL = 'users-login'

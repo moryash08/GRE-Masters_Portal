@@ -17,9 +17,10 @@ def universityform(request):
         form = UniversityForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request, f'Form Filled Successfully')
+            messages.success(request, f'Form Filled Successfully!')
             return redirect('GRE_Website-home')
 
     else:
         form = UniversityForm()
-    return render(request, 'GRE_Website/universityform.html', {'title': 'University Form', 'form': form})
+    return render(request, 'GRE_Website/universityform.html',
+                  {'title': 'University Form', 'form': form})
