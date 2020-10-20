@@ -9,11 +9,13 @@ class Student(models.Model):
     email = models.EmailField()
     collegename = models.CharField(max_length=100)
     country = models.CharField(max_length=56)
-    university = models.CharField(max_length=60)
+    university = models.CharField(max_length=150, blank=True)
+    courses = models.CharField(max_length=50, default="Masters")
     cgpa = models.DecimalField(max_digits=4, decimal_places=2)
     examname = models.CharField(max_length=30)
     examscore = models.DecimalField(max_digits=5, decimal_places=2)
     fees = models.BigIntegerField()
+    fees_extra = models.BooleanField(default=False)
     date_filled = models.DateField(default=timezone.now)
 
     def __str__(self):

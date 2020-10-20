@@ -20,109 +20,28 @@
                 <form class="finduniversity-form" method="POST">
                     {% csrf_token %}
                     <!-- Text input-->
+                    {% for field in form %}
+                        {% if field.label != 'Fees extra' %}
+                            <div class="form-group">
+                                <div class="row form-row">
+                                    <div class="col-12 col-md-4 mt-2">
+                                        {{ field.label }}
+                                    </div>
+                                    <div class="col-12 col-md-8">
+                                        {{ field }}
+                                        <span class="help-block" style="font-size: 15px; color: green">
+                                            <small>{{ field.help_text }}</small>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
                     <div class="form-group">
                         <div class="row form-row">
-                            <div class="col-12 col-md-4">
-                                {{ form.fullname|blabel }}
-                            </div>
-                            <div class="col-12 col-md-8">
-                                {{ form.fullname }}
-                            </div>
-                            <span class="help-block"></span>
-                        </div>
-                    </div>
-                    <!-- Text Input-->
-                    <div class="form-group">
-                        <div class="row form-row">
-                            <div class="col-12 col-md-4">
-                                {{ form.email|blabel }}
-                            </div>
-                            <div class="col-12 col-md-8">
-                                {{ form.email }}
-                            </div>
-                            <span class="help-block"></span>
-                        </div>
-                    </div>
-                    <!-- Select Basic -->
-                    <div class="form-group">
-                        <div class="row form-row">
-                            <div class="col-12 col-md-4">
-                                {{ form.collegename|blabel:"Your College Name" }}
-                            </div>
-                            <div class="col-12 col-md-8">
-                                {{ form.collegename }}
-                            </div>
-                            <span class="help-block"></span>
-                        </div>
-                    </div>
-                    <!-- Select Basic -->
-                    <div class="form-group mt-3">
-                        <div class="row form-row">
-                            <div class="col-12 col-md-4">
-                                {{ form.country|blabel }}
-                            </div>
-                            <div class="col-12 col-md-8">
-                                {{ form.country }}
-                            </div>
-                            <span class="help-block"></span>
-                        </div>
-                    </div>
-                    <!-- Select Basic -->
-                    <div class="form-group">
-                        <div class="row form-row">
-                            <div class="col-12 col-md-4">
-                                {{ form.university|blabel }}
-                            </div>
-                            <div class="col-12 col-md-8">
-                                {{ form.university }}
-                            </div>
-                            <span class="help-block"></span>
-                        </div>
-                    </div>
-                    <!-- Text input-->
-                    <div class="form-group mt-3">
-                        <div class="row form-row">
-                            <div class="col-12 col-md-4">
-                                {{ form.cgpa|blabel:"CGPA" }}
-                            </div>
-                            <div class="col-12 col-md-8">
-                                {{ form.cgpa }}
-                            </div>
-                            <span class="help-block"></span>
-                        </div>
-                    </div>
-                    <!-- Select Basic -->
-                    <div class="form-group">
-                        <div class="row form-row">
-                            <div class="col-12 col-md-4">
-                                {{ form.examname|blabel:"Entrance Exam" }}
-                            </div>
-                            <div class="col-12 col-md-8">
-                                {{ form.examname }}
-                            </div>
-                            <span class="help-block"></span>
-                        </div>
-                    </div>
-                    <!-- Text input-->
-                    <div class="form-group">
-                        <div class="row form-row">
-                            <div class="col-12 col-md-4">
-                                {{ form.examscore|blabel }}
-                            </div>
-                            <div class="col-12 col-md-8">
-                                {{ form.examscore }}
-                            </div>
-                            <span class="help-block"></span>
-                        </div>
-                    </div>
-                    <!-- Text input-->
-                    <div class="form-group">
-                        <div class="row form-row">
-                            <div class="col-12 col-md-4">
-                                {{ form.fees|blabel:"Max Affordable Fees" }}
-                            </div>
-                            <div class="col-12 col-md-8">
-                                {{ form.fees }}
+                            <div class="col-12 col-md-12 mt-2">
+                                {{ form.fees_extra|blabel:"Do you Want to Account for Extra Costs? Hostels, Books, Meals... " }}
+                                {{ form.fees_extra }}
                             </div>
                             <span class="help-block"></span>
                         </div>
