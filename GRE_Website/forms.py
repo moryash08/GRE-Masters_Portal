@@ -5,6 +5,7 @@ from django.utils.translation import ugettext_lazy as _
 from django_countries import countries
 import floppyforms.widgets as floppy_widgets
 
+
 COUNTRY_CHOICES = tuple(countries)
 collegeList = Student.objects.all().values_list('collegename', flat=True).distinct
 universityList = Student.objects.all().values_list('university', flat=True).distinct

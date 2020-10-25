@@ -5,5 +5,5 @@ from django.urls import path
 urlpatterns = [
     path('', views.home, name='GRE_Website-home'),
     path('about/', views.about, name='GRE_Website-about'),
-    path('form/', views.universityform, name='GRE_Website-universityform'),
+    path('university-form/', views.universityform, name='university-form'),
 ]
