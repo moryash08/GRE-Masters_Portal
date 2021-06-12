@@ -1,0 +1,59 @@
+{% extends "GRE_Website/base.html" %}
+
+{% block content %}
+    <h1>Course Details</h1>
+    <table  style="border:2px solid black;">
+		<tr style="border:2px solid black;">
+		<td style="border:2px solid black;">DURATION:</td>
+		<td style="border:2px solid black;">{{ About.Duration }}</td>
+		</tr>
+		<tr style="border:2px solid black;">
+		<td style="border:2px solid black;">LEVEL:</td>
+		<td style="border:2px solid black;">{{ About.Level }}</td>
+		</tr>
+		<tr style="border:2px solid black;">
+		<td style="border:2px solid black;">TUITION AND FEES:</td>
+		<td style="border:2px solid black;">{{ Expenses.TuitionAndfees }}</td>
+		</tr>
+		<tr style="border:2px solid black;">
+		<td style="border:2px solid black;">HOSTEL AND MEALS:</td>
+		<td style="border:2px solid black;">{{ Expenses.HostelAndMeals }}</td>
+		</tr>
+		<tr style="border:2px solid black;">
+		<td style="border:2px solid black;">INSURANCE:</td>
+		<td style="border:2px solid black;">{{ Expenses.Insurance }}</td>
+		</tr>
+		<tr style="border:2px solid black;">
+		<td style="border:2px solid black;">BOOKS AND SUPPLIES:</td>
+		<td style="border:2px solid black;">{{ Expenses.BooksandSupplies }}</td>
+		</tr>
+		<tr style="border:2px solid black;">
+		<td style="border:2px solid black;">MISCELLANEOUS EXPENSE:</td>
+		<td style="border:2px solid black;">{{ Expenses.MiscellaneousExpense }}</td>
+		</tr>
+		<tr style="border:2px solid black;">
+		<td style="border:2px solid black;">ACTIVE FILE FEE:</td>
+		<td style="border:2px solid black;">{{ Expenses.ActiveFileFee }}</td>
+		</tr>
+		<tr style="border:2px solid black;">
+		<td style="border:2px solid black;">HOUSING APPLICATION FEE:</td>
+		<td style="border:2px solid black;">{{ Expenses.HousingApplicationFee }}</td>
+		</tr>
+		<tr style="border:2px solid black;">
+		<td style="border:2px solid black;">TOTAL:</td>
+		<td style="border:2px solid black;">{{ Expenses.Total }}</td>
+		</tr>
+		<tr style="border:2px solid black;">
+		<td style="border:2px solid black;">TOEFL:</td>
+		<td style="border:2px solid black;">{{ Exams.TOEFL  }}</td>
+		</tr>
+		<tr style="border:2px solid black;">
+		<td style="border:2px solid black;">IELTS:</td>
+		<td style="border:2px solid black;">{{ Exams.IELTS  }}</td>
+		</tr>
+		<tr style="border:2px solid black;">
+		<td style="border:2px solid black;">GRE:</td>
+		<td style="border:2px solid black;">{{ Exams.GRE  }}</td>
+		</tr>
+		</table>
+{% endblock content %}

@@ -21,7 +21,7 @@
                     {% csrf_token %}
                     <!-- Text input-->
                     {% for field in form %}
-                        {% if field.label != 'Fees extra' %}
+                        {% if field.label != 'Fees extra' and field.label != 'University Name' and field.label != 'Course Name' %}
                             <div class="form-group">
                                 <div class="row form-row">
                                     <div class="col-12 col-md-4 mt-2">
@@ -29,9 +29,33 @@
                                     </div>
                                     <div class="col-12 col-md-8">
                                         {{ field }}
-                                        <span class="help-block" style="font-size: 15px; color: green">
+                                        <span class="help-block" style="font-size: 18px; color: green">
                                             <small>{{ field.help_text }}</small>
                                         </span>
+                                        {% for error in field.errors %}
+                                        <span class="error-block" style="font-size: 18px; color: red">
+                                            <p><small>{{ error }}</small></p>
+                                        </span>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        {% elif field.label != 'Fees extra' %}
+                            <div class="form-group">
+                                <div class="row form-row">
+                                    <div class="col-12 col-md-4 mt-2">
+                                        {{ field.label }}
+                                    </div>
+                                    <div class="col-12 col-md-8">
+                                        {{ field }}
+                                        <span class="help-block" style="font-size: 18px; color: green">
+                                            <small>{{ field.help_text }}</small>
+                                        </span>
+                                        {% for error in field.errors %}
+                                        <span class="error-block" style="font-size: 18px; color: red">
+                                            <p><small>{{ error }}</small></p>
+                                        </span>
+                                        {% endfor %}
                                     </div>
                                 </div>
                             </div>

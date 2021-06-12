@@ -31,6 +31,9 @@
                             <span class="input-group-text"> <i class="fa fa-user"></i> </span>
                         </div>
                         {{ form.username }}
+                            <span class="error-block" style="color: red;">
+                                <p>{{ form.username.error }}</p>
+                            </span>
                     </div>
                     <!-- form-group// -->
                     <div class="form-group input-group">
@@ -38,13 +41,9 @@
                             <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
                         </div>
                         {{ form.email }}
-                        {% if error %}
-                            <span class="help-block">
-                                {% for err in errors %}
-                                    <p>{{ err }}</p>
-                                {% endfor %}
+                            <span class="error-block" style="color: red;">
+                                <p>{{ form.email.error }}</p>
                             </span>
-                        {% endif %}
                     </div>
                     <!-- form-group end.// -->
                     <div class="form-group input-group">
@@ -52,7 +51,9 @@
                             <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
                         </div>
                         {{ form.password1 }}
-                        {{ form.password1.errors }}
+                            <span class="error-block" style="color: red;">
+                                <p>{{ form.password1.errors }}</p>
+                            </span>
                     </div>
                     <!-- form-group// -->
                     <div class="form-group input-group">
@@ -60,12 +61,14 @@
                             <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
                         </div>
                         {{ form.password2 }}
-                        {{ form.password2.errors }}
+                            <span class="error-block" style="color: red;">
+                                <p>{{ form.password2.errors }}</p>
+                            </span>
 
                     </div>
                     <!-- form-group// -->
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary btn-block"> Create Account  </button>
+                        <button type="submit" class="btn btn-primary btn-block"> Create Account </button>
                     </div>
                     <!-- form-group// -->
                     <p class="text-center text-muted">Already Have an account? <a style="color: darkblue;" href="{% url 'users-login' %}">Log In</a> </p>

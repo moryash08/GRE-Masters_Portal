@@ -6,12 +6,12 @@ from .forms import (
 )
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib import messages
-from django.views.generic import (
+'''from django.views.generic import (
     CreateView,
     UpdateView,
     DetailView,
     DeleteView
-)
+)'''
 from django.contrib.auth.decorators import login_required
 
 

@@ -6,4 +6,5 @@ urlpatterns = [
     path('', views.home, name='GRE_Website-home'),
     path('about/', views.about, name='GRE_Website-about'),
     path('university-form/', views.universityform, name='university-form'),
+    path('course-details/', views.coursedetails, name='course-details'),
 ]
